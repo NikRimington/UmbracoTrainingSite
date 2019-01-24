@@ -1,4 +1,4 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.HomePage>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.HomePage>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
 	Layout = "Layout.cshtml";
@@ -6,3 +6,8 @@
 
 <div>This content comes from the Home Page template file (HomePage.cshtml)</div>
 @Html.Partial("MyExamplePartial")
+
+<div>The next entry is from the surface controller</div>
+<div>
+    @Html.Action("FilterForm", "EventFilter")
+</div>
