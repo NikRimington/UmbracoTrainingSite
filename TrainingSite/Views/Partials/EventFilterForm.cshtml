@@ -1,3 +1,11 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<TrainingSite.Models.EventFilterModel>
 
-<div>Eventually there will be a form here</div>
+
+<div>
+    @using (Html.BeginUmbracoForm("FilterEvents", "EventFilter", FormMethod.Post))
+    {
+        <input type="datetime" name="startDate" value="@Model.StartDate" />
+        <input type="datetime" name="endDate" value="@Model.EndDate" />
+        <button type="submit" class="filter-events-button">Filter</button>
+    }
+</div>

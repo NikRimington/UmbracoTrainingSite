@@ -278,6 +278,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EventFilterController.cs" />
+    <Compile Include="Models\EventFilterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +320,8 @@
     <Content Include="Views\Partials\MyExamplePartial.cshtml" />
     <Content Include="Views\HomePage.cshtml" />
     <Content Include="Views\Partials\EventFilterForm.cshtml" />
+    <Content Include="Views\Event.cshtml" />
+    <Content Include="Views\Events.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

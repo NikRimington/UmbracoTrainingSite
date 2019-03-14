@@ -1,5 +1,20 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Events>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Events>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = null;
+	Layout = "Layout.cshtml";
+    var filterModel = new TrainingSite.Models.EventFilterModel();
+    var filteredList = TempData["filteredEvents"] as IEnumerable<IPublishedContent> ?? Model.Children();
 }
+
+<div>
+    @Html.Action("FilterForm", "EventFilter")
+</div>
+
+<div>
+    @foreach(var eventEntry in filteredList.OfType<ContentModels.Event>())
+    {
+        <div>
+            @eventEntry.Name - @eventEntry.EventDate.ToString("yyyy-MM-dd")
+        </div>
+    }
+</div>
